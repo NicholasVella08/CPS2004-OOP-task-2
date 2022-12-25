@@ -37,6 +37,7 @@ public class MineSweeper {
         {
             Random random = new Random();
             int i = random.nextInt(10);
+            int j = random.nextInt(10);
             System.out.println("i: " + i + " j: " + j);
             fieldHidden[i][j] = 100;
             var++;
