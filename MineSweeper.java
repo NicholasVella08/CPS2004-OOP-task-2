@@ -215,7 +215,32 @@ public class MineSweeper {
 
         if(x==0)
         {
-            
+            if(i!=0)
+            {
+                if(fieldHidden[i-1][j]!=100)
+                {
+                    fieldVisible[i-1][j] = fieldHidden[i-1][j];
+                    if(fieldVisible[i-1][j]==0)  fieldVisible[i-1][j] = 50;
+                }
+            }
+            if(j!=0)
+            {
+                if(fieldHidden[i][j-1]!=100)
+                {
+                    fieldVisible[i][j-1] = fieldHidden[i][j-1];
+                    if(fieldVisible[i][j-1]==0)  fieldVisible[i][j-1] = 50;
+                }
+
+            }
+            if(i!=0 && j!=0)
+            {
+                if(fieldHidden[i-1][j-1]!=100)
+                {
+                    fieldVisible[i-1][j-1] = fieldHidden[i-1][j-1];
+                    if(fieldVisible[i-1][j-1]==0)  fieldVisible[i-1][j-1] = 50;
+                }
+
+            }
         }
         else if(x==1)
         {
