@@ -10,4 +10,24 @@ public class MineSweeper {
         MineSweeper M = new MineSweeper();
         M.startGame();
     }
+
+    public void startGame()
+    {
+        System.out.println("\n\n================Welcome to Minesweeper ! ================\n");
+        setupField(1);
+
+        boolean flag = true;
+        while(flag)
+        {
+            displayVisible();
+            flag = playMove();
+            if(checkWin())
+            {
+                displayHidden();
+                System.out.println("\n================You WON!!!================");
+                break;
+            }
+        }
+    }
+
 }
