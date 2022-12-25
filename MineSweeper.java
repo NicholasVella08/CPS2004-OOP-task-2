@@ -103,7 +103,20 @@ public class MineSweeper {
         {
             System.out.print(" " + i + "  ");
         }
-        
+        System.out.print("\n");
+        for(int i=0; i<10; i++)
+        {
+            System.out.print(i + "\t| ");
+            for(int j=0; j<10; j++)
+            {
+                if(fieldVisible[i][j]==0)
+                {
+                    System.out.print("?");
+                }
+                
+            }
+            System.out.print("\n");
+        }
     }
 
 }
