@@ -30,4 +30,18 @@ public class MineSweeper {
         }
     }
 
+    public void setupField(int diff)
+    {
+        int var=0;
+        while(var!=10)
+        {
+            Random random = new Random();
+            int i = random.nextInt(10);
+            System.out.println("i: " + i + " j: " + j);
+            fieldHidden[i][j] = 100;
+            var++;
+        }
+        buildHidden();
+    }
+
 }
