@@ -96,4 +96,14 @@ public class MineSweeper {
 
     }
 
+    public void displayVisible()
+    {
+        System.out.print("\t ");
+        for(int i=0; i<10; i++)
+        {
+            System.out.print(" " + i + "  ");
+        }
+        
+    }
+
 }
