@@ -113,7 +113,15 @@ public class MineSweeper {
                 {
                     System.out.print("?");
                 }
-                
+                else if(fieldVisible[i][j]==50)
+                {
+                    System.out.print(" ");
+                }
+                else
+                {
+                    System.out.print(fieldVisible[i][j]);
+                }
+                System.out.print(" | ");
             }
             System.out.print("\n");
         }
