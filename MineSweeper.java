@@ -327,7 +327,7 @@ public class MineSweeper {
             }
         }
     }
-    
+
     public boolean checkWin()
     {
         for(int i=0; i<10; i++)
@@ -345,4 +345,36 @@ public class MineSweeper {
         }
         return true;
     }
+
+    public void displayHidden()
+    {
+        System.out.print("\t ");
+        for(int i=0; i<10; i++)
+        {
+            System.out.print(" " + i + "  ");
+        }
+        System.out.print("\n");
+        for(int i=0; i<10; i++)
+        {
+            System.out.print(i + "\t| ");
+            for(int j=0; j<10; j++)
+            {
+                if(fieldHidden[i][j]==0)
+                {
+                    System.out.print(" ");
+                }
+                else if(fieldHidden[i][j]==100)
+                {
+                    System.out.print("X");
+                }
+                else
+                {
+                    System.out.print(fieldHidden[i][j]);
+                }
+                System.out.print(" | ");
+            }
+            System.out.print("\n");
+        }
+    }
+
 }
