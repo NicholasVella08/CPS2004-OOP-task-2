@@ -85,33 +85,34 @@ public class MineSweeper {
     public void displayVisible()
     {
         System.out.print("\t ");
-        for(int i=0; i<16; i++)
-        {
-            System.out.print(" " + i + "  ");
+        int n = 0;
+        while (n < 16) {
+            System.out.print(" " + n + "  ");
+            n++;
         }
         System.out.print("\n");
-        for(int i=0; i<16; i++)
-        {
+        int i = 0;
+        while (i < 16) {
             System.out.print(i + "\t| ");
-            for(int j=0; j<16; j++)
-            {
-                if(fieldVisible[i][j]==0)
-                {
+            int j = 0;
+            while (j < 16) {
+                if (fieldVisible[i][j] == 0) {
                     System.out.print("?");
                 }
-//                else if(fieldVisible[i][j]==50)
-                else if(fieldVisible[i][j]==128)
-                {
+
+                else if (fieldVisible[i][j] == 128) {
                     System.out.print(" ");
                 }
-                else
-                {
+                else {
                     System.out.print(fieldVisible[i][j]);
                 }
                 System.out.print(" | ");
+                j++;
             }
             System.out.print("\n");
+            i++;
         }
+
     }
 
     public boolean playMove()
