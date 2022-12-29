@@ -46,52 +46,39 @@ public class MineSweeper {
 
     public void buildHidden()
     {
-        for(int i=0; i<16; i++)
-        {
-            for(int j=0; j<16; j++)
-            {
-                int cnt=0;
-                if(fieldHidden[i][j]!=256)
-                {
-
-                    if(i!=0)
-                    {
-                        if(fieldHidden[i-1][j]==256) cnt++;
-                        if(j!=0)
-                        {
-                            if(fieldHidden[i-1][j-1]==256) cnt++;
-                        }
-
-                    }
-                    if(i!=15)
-                    {
-                        if(fieldHidden[i+1][j]==256) cnt++;
-                        if(j!=15)
-                        {
-                            if(fieldHidden[i+1][j+1]==256) cnt++;
+        for (int row = 0; row < 16; row++) {
+            for (int col = 0; col < 16; col++) {
+                int count = 0;
+                if (fieldHidden[row][col] != 256) {
+                    if (row > 0) {
+                        if (fieldHidden[row - 1][col] == 256) count++;
+                        if (col > 0) {
+                            if (fieldHidden[row - 1][col - 1] == 256) count++;
                         }
                     }
-                    if(j!=0)
-                    {
-                        if(fieldHidden[i][j-1]==256) cnt++;
-                        if(i!=15)
-                        {
-                            if(fieldHidden[i+1][j-1]==256) cnt++;
+                    if (row != 15) {
+                        if (fieldHidden[row + 1][col] == 256) count++;
+                        if (col != 15) {
+                            if (fieldHidden[row + 1][col + 1] == 256) count++;
                         }
                     }
-                    if(j!=15)
-                    {
-                        if(fieldHidden[i][j+1]==256) cnt++;
-                        if(i!=0)
-                        {
-                            if(fieldHidden[i-1][j+1]==256) cnt++;
+                    if (col > 0) {
+                        if (fieldHidden[row][col - 1] == 256) count++;
+                        if (row != 15) {
+                            if (fieldHidden[row + 1][col - 1] == 256) count++;
                         }
                     }
-
-                    fieldHidden[i][j] = cnt;
+                    if (col != 15) {
+                        if (fieldHidden[row][col + 1] == 256) count++;
+                        if (row > 0) {
+                            if (fieldHidden[row - 1][col + 1] == 256) count++;
+                        }
+                    }
+                    fieldHidden[row][col] = count;
                 }
             }
         }
+
 
     }
 
