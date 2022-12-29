@@ -318,20 +318,21 @@ public class MineSweeper {
 
     public boolean checkWin()
     {
-        for(int i=0; i<16; i++)
-        {
-            for(int j=0; j<16; j++)
-            {
-                if(fieldVisible[i][j]==0)
-                {
-                    if(fieldHidden[i][j]!=256)
-                    {
+        int row = 0;
+        while (row < 16) {
+            int col = 0;
+            while (col < 16) {
+                if (fieldVisible[row][col] == 0) {
+                    if (fieldHidden[row][col] != 256) {
                         return false;
                     }
                 }
+                col++;
             }
+            row++;
         }
         return true;
+
     }
 
     public void displayHidden()
