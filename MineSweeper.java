@@ -338,32 +338,33 @@ public class MineSweeper {
     public void displayHidden()
     {
         System.out.print("\t ");
-        for(int i=0; i<16; i++)
-        {
-            System.out.print(" " + i + "  ");
-        }
+        int row = 0;
+        do {
+            System.out.print(" " + row + "  ");
+            row++;
+        } while (row < 16);
         System.out.print("\n");
-        for(int i=0; i<16; i++)
-        {
-            System.out.print(i + "\t| ");
-            for(int j=0; j<16; j++)
-            {
-                if(fieldHidden[i][j]==0)
-                {
+        row = 0;
+        do {
+            System.out.print(row + "\t| ");
+            int col = 0;
+            do {
+                if (fieldHidden[row][col] == 0) {
                     System.out.print(" ");
                 }
-                else if(fieldHidden[i][j]==256)
-                {
+                else if (fieldHidden[row][col] == 256) {
                     System.out.print("X");
                 }
-                else
-                {
-                    System.out.print(fieldHidden[i][j]);
+                else {
+                    System.out.print(fieldHidden[row][col]);
                 }
                 System.out.print(" | ");
-            }
+                col++;
+            } while (col < 16);
             System.out.print("\n");
-        }
+            row++;
+        } while (row < 16);
+
     }
 
 }
